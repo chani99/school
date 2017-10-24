@@ -15,6 +15,9 @@
 
     <!-- Custom styles for this template -->
     <link href="front/css/one-page-wonder.css" rel="stylesheet">
+    <link href="front/css/login.css" rel="stylesheet">
+    <link href="front/css/curse-temp.css" rel="stylesheet">
+
 
 </head>
 
@@ -23,84 +26,90 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <img src="back/images/logo_codeschool.PNG" class="navbar-brand" alt="logo">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">School</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Administration</a>
-                    </li>
-                </ul>
+            <img src="back/images/logo_codeschool.PNG" id="logo" class="mylogo" alt="logo">
+            <div class="float-left">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">School
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Administration</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+            <div id="logedin" class="float-right">
+                loggedin
+            </div>
+
         </div>
     </nav>
 
+    <!-- login screen changes to header when logedin -->
     <header class="masthead">
         <div class="overlay">
-            <div class="container">
-                <h1 class="display-1 text-white">SCHOOL PROJECT</h1>
+            <div class="container" id="schoolHeader">
+                <h3 class="display-4 text-white">SCHOOL PROJECT</h3>
+            </div>
+            <div id="loginform" class="container hoverable">
+                <form class="form-signin">
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <label for="inputname" class="sr-only">User name</label>
+                    <input type="name" id="inputname" class="form-control" placeholder="User name" required autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
             </div>
         </div>
     </header>
 
+
+    <!-- school empty containr to fill with a template -->
     <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 order-2">
-                    <div class="p-5">
-                        <img class="img-fluid rounded-circle" src="https://unsplash.it/500/500?image=836" alt="">
-                    </div>
+        <div class="container school-body">
+            <div class="row">
+                <div class="col-md-2 order-2">
+                    courses
                 </div>
-                <div class="col-md-6 order-1">
-                    <div class="p-5">
-                        <h2 class="display-4">For those about to rock...</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-                    </div>
+
+
+                <div class="col-md-2 order-2">
+                    students
+                </div>
+
+                <div class="col-md-8 order-2">
+                    main
                 </div>
             </div>
         </div>
     </section>
 
+
+    <!-- administrator empty containr to fill with a template -->
     <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="p-5">
-                        <img class="img-fluid rounded-circle" src="https://unsplash.it/500/500?image=452" alt="">
-                    </div>
+        <div class="container admin-body">
+            <div class="row">
+                <div class="col-md-3 order-2">
+                    administators
                 </div>
-                <div class="col-md-6">
-                    <div class="p-5">
-                        <h2 class="display-4">We salute you!</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-                    </div>
+
+
+                <div class="col-md-9 order-2">
+                    main
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 order-2">
-                    <div class="p-5">
-                        <img class="img-fluid rounded-circle" src="https://unsplash.it/500/500?image=453" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6 order-1">
-                    <div class="p-5">
-                        <h2 class="display-4">Let there be rock!</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
@@ -110,9 +119,10 @@
         <!-- /.container -->
     </footer>
 
+
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="front/vendor/jquery/jquery.min.js"></script>
+    <script src="front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

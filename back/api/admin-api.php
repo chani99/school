@@ -12,39 +12,39 @@
         }
 
 
-        // // Create a new Admins
-        // function Create($params) {
-        //     return $this->S_controller->CreateAdmins($params);
-        // }
+        // Create a new Admins
+        function Create($params) {
+            return $this->controller->CreateAdmins($params);
+        }
         
 
-        //  // Get all Adminss or check if a id exists
-        // function Read($params) {
+         // Get all Adminss or check if a id exists
+        function Read($params) {
 
-        //     if (array_key_exists("id", $params)) {
-        //         $Admins = $c->getById($params);
-        //         return $Admins;
-        //     }
+            if (array_key_exists("id", $params)) {
+                $Admins = $c->getById($params);
+                return $Admins;
+            }
 
-        //     else {
-        //         return $this->S_controller->getAll();
-        //     }
-        // } 
+            else {
+                return $this->controller->getAll();
+            }
+        } 
 
 
-        // // Update a Admins
-        // function Update($params) {
-        //     $Admins =$this->S_controller->UpdateById($params);
-        //     return $Admins;
-        //     }
+        // Update a Admins
+        function Update($params) {
+            $Admins =$this->controller->UpdateById($params);
+            return $Admins;
+            }
 
             
-        // //  Delete 1 Admins   
-        //  function Delete($params) {
-        //     $Admins = $this->S_controller->DeleteById($params);
-        //     return $Admins;
+        //  Delete 1 Admins   
+         function Delete($params) {
+            $Admins = $this->controller->DeleteById($params);
+            return $Admins;
             
-        // }
+        }
 
     }
 ?>

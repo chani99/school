@@ -7,10 +7,11 @@
     
 
     class CourseController extends Controller {
-        public $db;
-        public $model;
-        public $validation;        
-        public $table_name = "course";
+        private $db;
+        private $model;
+        private $validation;        
+        private $table_name = "course";
+        private $classneame = "CourseController";
         
 
         function __construct($param) {
@@ -27,32 +28,15 @@
         }
         
 
-        // // Creates a new line in a table
-        // function CreateNewRow($param) {
-        //     $rows = $this->model->tableRows();
-        //     $column="'";
-        //     $values="'";
-        //     $exicute = array();
+        // Creates a new line in a table
+        function CreateNewRow($param) {
+            $rows = $this->model->getRows();
+            $sql_data = $this->CreateRow($rows, $this->model);
+            $update = $this->db->create_new_row($this->table_name, $sql_data[0], $sql_data[1],  $sql_data[2]);
+            return $this->checkIsWasGood($update);
+       
+        }
 
-        //     for($i=0; $i<count($rows); $i++) {
-        //         if (count($rows) != $i+1) {
-        //         $column += $rows[$i] . ", ";
-        //         $values += ":" . $rows[$i], . ", ";
-        //         array_push($exicute, $model->get.$rows[$i]()); 
-        //         }
-        //         else {
-        //         $column += $rows[$i] . "'";
-        //         $values += ":" . $rows[$i], . "'";
-        //         array_push($exicute, $model->get.$rows[$i]()); 
-        //         }
-        //     }    
-                
-        //     $update = $this->db->create_new_row($this->table_name, $column, $values, $exicute);
-        //     return $this->checkIsWasGood($update);
-        //     }else{
-        //         return $c->getName(); //לבדוק למה החזרתי את זה
-        //     }
-        // }
 
 
         // Updates a line in directos table
@@ -70,9 +54,8 @@
 
         // Selects all from Courses table and returns a object array
         function getAllCourses() {
-            $allCourses = array();
             $getall = $this->db->SelectAllFromTable($this->table_name, $this->classneame);
-            
+            $allCourses = array();            
             for($i=0; $i<count($getall); $i++) {
                 $c = new CourseModel($getall[$i]);
                 array_push($allCourses, $c->jsonSerialize());
@@ -83,13 +66,12 @@
 
 
         // Checks if a id exists
-         function getDirecotrById($param){
-            $c = new CourseModel($param);
-                if($c->getId() != 'null' || $c->getId() != 'NaN'){
+         function getCourseById($param){
+                if($this->model->getId() != 'null' || $this->model->getId() != 'NaN'){
                 $check =  $this->db->Check_if_id_exists($this->table_name, $c->getId());
                 return $this->checkIsWasGood($check);
                 }else{
-                    return $c->getId();
+                    return false;
                 }
 
             }
@@ -98,13 +80,12 @@
 
 
         // Deletes a line from Courses table
-        function DeleteDirecotrById($param) {
-            $c = new CourseModel($param);
-                if($c->getId() != false){
+        function DeleteCourseById($param) {
+                if($this->model->getId() != false){
                 $deleted =  $this->db->DeleteRow($this->table_name, $c->getId());
                 return $this->checkIsWasGood($deleted);
                 }else{
-                    return "error";
+                    return false;
                 }
 
     
@@ -113,15 +94,14 @@
 
 
         // Updates a line in directos table
-        function UpdateDirecotrById($param) {
-            $c = new CourseModel($param);
-                if($c->getId() != false || $c->getId() != false){
-                    if($c->getName() != false) {
-                    $updateValues= "name =  '".$c->getName()."'";
-                    $update =  $this->db->update_table($this->table_name, $c->getId(), $updateValues);
+        function UpdateById($param) {
+                if($this->model->getId() != false || $this->model->getId() != false){
+                    if($this->model->getName() != false) {
+                        $updateValues= "name =  '".$this->model->getName()."', description = '" .$this->model->getdescription(). "', image = '". $this->model->getimage()."'";
+                        $update =  $this->db->update_table($this->table_name, $this->model->getId(), $updateValues);
                     return $this->checkIsWasGood($update);
                 }else{
-                    return "error";
+                    return false;
                 }
             }
 

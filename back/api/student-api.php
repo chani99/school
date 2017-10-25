@@ -12,39 +12,39 @@
         }
 
 
-        // // Create a new Students
-        // function Create($params) {
-        //     return $this->S_controller->CreateStudents($params);
-        // }
+        // Create a new Students
+        function Create($params) {
+            return $this->controller->CreateStudents($params);
+        }
         
 
-        //  // Get all Studentss or check if a id exists
-        // function Read($params) {
+         // Get all Studentss or check if a id exists
+        function Read($params) {
 
-        //     if (array_key_exists("id", $params)) {
-        //         $Students = $c->getById($params);
-        //         return $Students;
-        //     }
+            if (array_key_exists("id", $params)) {
+                $Students = $c->getById($params);
+                return $Students;
+            }
 
-        //     else {
-        //         return $this->S_controller->getAll();
-        //     }
-        // } 
+            else {
+                return $this->controller->getAll();
+            }
+        } 
 
 
-        // // Update a Students
-        // function Update($params) {
-        //     $Students =$this->S_controller->UpdateById($params);
-        //     return $Students;
-        //     }
+        // Update a Students
+        function Update($params) {
+            $Students =$this->controller->UpdateById($params);
+            return $Students;
+            }
 
             
-        // //  Delete 1 Students   
-        //  function Delete($params) {
-        //     $Students = $this->S_controller->DeleteById($params);
-        //     return $Students;
+        //  Delete 1 Students   
+         function Delete($params) {
+            $Students = $this->controller->DeleteById($params);
+            return $Students;
             
-        // }
+        }
 
     }
 ?>

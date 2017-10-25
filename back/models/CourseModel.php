@@ -41,11 +41,11 @@
 
         public function jsonSerialize() {
             return [
-                "Course id" => $this->id,
-                "Course name" => $this->name,
-                "Course name" => $this->description,
-                "Course name" => $this->image
-                
+                "Course_id" => $this->id,
+                "Course_name" => $this->name,
+                "Course_description" => $this->description,
+                "Course_image" => $this->image
+                            
             ];
         }
     }

@@ -4,7 +4,7 @@
     require_once '../controllers/CourseController.php';
 
     class CourseApi extends Api{
-        public $controller;
+        private $controller;
         
 
         function __construct($param) {
@@ -12,39 +12,39 @@
         }
 
 
-        // // Create a new Courses
-        // function Create($params) {
-        //     return $this->C_controller->CreateCourses($params);
-        // }
+                // Create a new result
+                function Create($params) {
+                    return $this->controller->CreateNewRow($params);
+                }
+                
         
-
-        //  // Get all Coursess or check if a id exists
-        // function Read($params) {
-
-        //     if (array_key_exists("id", $params)) {
-        //         $Courses = $c->getById($params);
-        //         return $Courses;
-        //     }
-
-        //     else {
-        //         return $this->C_controller->getAll();
-        //     }
-        // } 
-
-
-        // // Update a Courses
-        // function Update($params) {
-        //     $Courses =$this->C_controller->UpdateById($params);
-        //     return $Courses;
-        //     }
-
-            
-        // //  Delete 1 Courses   
-        //  function Delete($params) {
-        //     $Courses = $this->C_controller->DeleteById($params);
-        //     return $Courses;
-            
-        // }
+                 // Get all results or check if a id exists
+                function Read($params) {
+        
+                    if (array_key_exists("id", $params)) {
+                        $result = $c->getById($params);
+                        return $result;
+                    }
+        
+                    else {
+                        return $this->controller->getAllCourses();
+                    }
+                } 
+        
+        
+                // Update a result
+                function Update($params) {
+                    $result =$this->controller->UpdateById($params);
+                    return $result;
+                    }
+        
+                    
+                //  Delete 1 result   
+                 function Delete($params) {
+                    $result = $this->controller->DeleteById($params);
+                    return $result;
+                    
+                }
 
     }
 ?>

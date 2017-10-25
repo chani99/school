@@ -1,6 +1,9 @@
 <?php  
     class Controller {
 
+        private $model;
+
+
 //  function that chaeks if the sql returnd a true or false resulte
  function checkIsWasGood($update) {
     $isOK = ($update == true ? true : false);
@@ -10,12 +13,12 @@
         
 
 
-        // Creates a new line in a table
-        function CreateNewRow($param) {
-            $rows = $this->model->getRows();
-            $column="";
-            $values="";
-            $exicute = array();
+        // Creates sql command to insert  a line in a  sql table
+        function CreateRow($rows, $model){
+        $this->model =$model;
+        $column="";
+        $values="";
+        $exicute = array();
 
             for($i=0; $i<count($rows); $i++) {
                 if (count($rows) != $i+1) {
@@ -31,13 +34,11 @@
                 $get = 'get' . $rows[$i];
                 $putit = $this->model->{$get}();
                 $exicute[$rows[$i]] = $putit;
+                }
             }
-            }    
-                
-            $update = $this->db->create_new_row($this->table_name, $column, $values, $exicute);
-
-            return $this->checkIsWasGood($update);
-       
+        return [$column, $values, $exicute];
         }
+  
+}
 
-    }
+

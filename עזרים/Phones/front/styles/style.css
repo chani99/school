@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+button {
+  min-width: 300px;
+}
+label {
+  margin-top: 20px;
+}
+#submit,
+#but {
+  margin-top: 20px;
+}
+.form-control {
+  max-width: 300px;
+}
+.btn-warning {
+  color: black;
+  min-width: 300px;
+  min-height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.myform {
+  margin-top: 50px;
+  background-color: #c4c3c3;
+  padding: 50px;
+}
+#submit {
+  margin-bottom: 50px;
+}
+.error {
+  color: red;
+}
+.hide {
+  display: none;
+}

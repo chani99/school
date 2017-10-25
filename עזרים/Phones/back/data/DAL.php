@@ -1,12 +1,12 @@
 <?php
-    // require_once '../models/DirectorModel.php';
+    require_once '../models/phoneModel.php';
     
 class DAL {
 
     private $my_Data_Base;
 
             private $host = '127.0.0.1';
-            private $db   = 'school';
+            private $db   = 'phones';
             private $user = 'root';
             private $pass = '';
             private $charset = 'utf8';
@@ -72,7 +72,6 @@ function deleteSQL($query) {
 
     return true;
 }
-
 
 function innerJoion($query) {
     $DB = $this->getDB();

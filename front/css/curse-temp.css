@@ -4,7 +4,7 @@
   box-sizing: border-box;
   box-shadow: 5px 5px 2px #C5C3C3;
   margin-top: 18px;
-  padding-bottom: 15px;
+  padding-bottom: 8px;
   background-color: white;
 }
 .centered {
@@ -29,7 +29,7 @@ h4 {
   max-width: 220px;
 }
 .photo {
-  padding: 15px;
-  max-width: 230px;
+  margin: 15px;
+  max-width: 40px;
   float: left;
 }

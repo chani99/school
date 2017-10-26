@@ -28,25 +28,28 @@
         <div class="container">
             <img src="back/images/logo_codeschool.PNG" id="logo" class="mylogo" alt="logo">
             <div class="float-left">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+                <div id="navlist">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">School
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">School
                                 <span class="sr-only">(current)</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Administration</a>
-                        </li>
-                    </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Administration</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div id="logedin" class="float-right">
-                loggedin
+            <div id="login" class="float-right">
+                login
             </div>
 
         </div>
@@ -73,20 +76,21 @@
 
 
     <!-- school empty containr to fill with a template -->
-    <section>
+    <section class="mainscreen">
         <div class="container school-body">
             <div class="row">
-                <div class="col-md-2 order-2" id="course">
-                    courses
+                <div class="col-md-3 order-3">
+                    <h4>Courses List:</h4>
+                    <div id="course"></div>
                 </div>
 
 
-                <div class="col-md-2 order-2">
-                    students
+                <div class="col-md-3 order-3">
+                    <h4>Student List:</h4>
+                    <div id="Students"></div>
                 </div>
 
-                <div class="col-md-8 order-2">
-                    main
+                <div class="col-md-6 order-6">
                 </div>
             </div>
         </div>
@@ -98,12 +102,10 @@
         <div class="container admin-body">
             <div class="row">
                 <div class="col-md-3 order-2">
-                    administators
                 </div>
 
 
                 <div class="col-md-9 order-2">
-                    main
                 </div>
             </div>
         </div>

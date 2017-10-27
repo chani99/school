@@ -33,7 +33,7 @@
             break;
 
             case 'Student':
-            $capi = new StudentApi();
+            $capi = new StudentApi($params);
             $result = $capi->gateway($method, $params);
             echo json_encode($result);
             break;

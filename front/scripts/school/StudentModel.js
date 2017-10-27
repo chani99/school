@@ -1,15 +1,14 @@
     // Administrator module
 
 
-    function Administator(data) {
+    function Studebt(data) {
         // let valN = validate.All(data);
         // if (!valN)
         //     throw "error";
         this.name = data.name;
-        this.role = data.role;
         this.phone = data.phone;
         this.email = data.email;
-        this.password = data.password;
+        this.image = data.image;
 
 
     }

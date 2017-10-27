@@ -1,10 +1,10 @@
     // director module controller get values and call type from director.js
     // and creates a director model and then sends it to ajax
-    var CourseModuleController = function() {
-        let CourseApiMethod = 'Course';
-        let CourseApiUrl = "back/api/api.php";
+    var StudentModelController = function() {
+        let StudebtApiMethod = 'Student';
+        let ApiUrl = "back/api/api.php";
         var data = {
-            ctrl: CourseApiMethod
+            ctrl: StudebtApiMethod
         };
         let send;
 
@@ -25,8 +25,8 @@
 
 
 
-            GetAllCourse: function(manu) {
-                sendAJAX("GET", CourseApiUrl, data, 'getall', manu);
+            GetAllStudents: function(manu) {
+                sendAJAX("GET", ApiUrl, data, 'getall', manu);
             },
 
 

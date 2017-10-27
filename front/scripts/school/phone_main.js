@@ -1,8 +1,8 @@
 "use static";
 
 $(document).ready(function() {
-    let phones_model = new PhonesModuleController();
-    
+    let phones_model = new CourseModuleController();
+
 
     $('#submit').click(function() {
         let name;
@@ -16,23 +16,23 @@ $(document).ready(function() {
         switch (value) {
             case 'create':
                 name = $('#name').val();
-                image = $('#pic').prop('files')[0]; 
+                image = $('#pic').prop('files')[0];
                 manu = $("#select_manu option:selected").val();
 
-                        if(image != undefined) {
-                                file_name = image.name;  
-                                let form_data = new FormData();                  
-                                form_data.append('file', image);
-                                sendFileToServer(form_data, 'upload');
-                        }
+                if (image != undefined) {
+                    file_name = image.name;
+                    let form_data = new FormData();
+                    form_data.append('file', image);
+                    sendFileToServer(form_data, 'upload');
+                }
 
                 phones_model.createPhone(name, file_name, manu);
                 break;
 
-            // case 'get-all':
-            // manu = $("#select_manu option:selected").val();
-            //     phones_model.GetAllPhones(manu);
-            //     break;
+                // case 'get-all':
+                // manu = $("#select_manu option:selected").val();
+                //     phones_model.GetAllPhones(manu);
+                //     break;
 
         }
 
@@ -44,5 +44,5 @@ $(document).ready(function() {
 
 
     });
-     
+
 });

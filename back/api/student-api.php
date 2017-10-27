@@ -1,14 +1,14 @@
 <?php
     require_once 'abstract-api.php';
     require_once 'api.php';
-    // require_once '../controllers/StudentController.php';
+    require_once '../controllers/StudentController.php';
 
     class StudentApi extends Api{
         private $controller;
         
 
-        function __construct() {
-            $this->controller = new StudentController();
+        function __construct($params) {
+            $this->controller = new StudentController($params);
         }
 
 
@@ -27,7 +27,7 @@
             }
 
             else {
-                return $this->controller->getAll();
+                return $this->controller->getAllStudents($params);
             }
         } 
 

@@ -49,7 +49,6 @@
             </div>
 
             <div id="login" class="float-right">
-                login
             </div>
 
         </div>
@@ -76,21 +75,39 @@
 
 
     <!-- school empty containr to fill with a template -->
-    <section class="mainscreen">
+    <section class="mainscreen gray">
         <div class="container school-body">
             <div class="row">
-                <div class="col-md-3 order-3 grayrow">
-                    <h4>Courses List:</h4>
+                <div class="col-md-3 order-3">
+                    <div class="flex-container">
+                        <h5 class="flex-item1">Courses List:</h5>
+                        <button class="flex-item2"><h3>+</h3></button>
+                    </div>
                     <div id="course"></div>
                 </div>
 
 
-                <div class="col-md-3 order-3">
-                    <h4>Student List:</h4>
+                <div class="col-md-3 order-3 ">
+                    <div class="flex-container">
+                        <h5 class="flex-item1">Student List:</h5>
+                        <button class="flex-item2"><h3>+</h3></button>
+                    </div>
                     <div id="Students"></div>
                 </div>
 
                 <div class="col-md-6 order-6">
+                    <div class="main-school">
+                        <img class="center" src="back/images/logo_dark.PNG" style="width:65%; margin-bottom:15px;">
+
+                        <h5 class="container2">Total courses in Code School:&nbsp;
+                            <A3 id="Csum"></A3>
+                        </h5> <br>
+                        <h5 class="container2">Total students in Code School:&nbsp;
+                            <A3 id="Ssum"></A3>
+                        </h5>
+
+
+                    </div>
                 </div>
             </div>
         </div>

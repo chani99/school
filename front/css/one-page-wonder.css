@@ -12,6 +12,22 @@ body {
 .mainscreen {
   padding: 20px;
 }
+.container2 {
+  padding-top: 20px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .brand {
   width: 200px;
 }
@@ -34,4 +50,33 @@ header.masthead > .overlay {
   header.masthead > .overlay {
     padding: 4rem 0;
   }
+}
+button {
+  border: none;
+  background-color: #DFDFDF;
+}
+.main-school {
+  background-color: white;
+  height: 100%;
+  padding: 50px;
+}
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-item1 {
+  padding-top: 6px;
+  -webkit-flex: 4;
+  flex: 4;
+}
+.flex-item2 {
+  -webkit-flex: 1;
+  flex: 1;
+}
+.gray {
+  background-color: #DFDFDF;
+}
+.nopadding {
+  margin: 0;
+  padding: 0;
 }

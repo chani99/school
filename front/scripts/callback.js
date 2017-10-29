@@ -11,6 +11,7 @@ function callback(response_text, calltype, manu) {
             break;
 
         case 'getall':
+        case 'get_one':
             createtemps(respnse, manu);
             break;
 

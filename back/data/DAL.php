@@ -48,6 +48,13 @@ function CheckId($query) {
     return $table->rowCount();
 }
 
+function getLineById($query) {
+    $DB = $this->getDB();
+    $table = $DB->prepare($query);
+    $table->execute();
+    return $mytable = $table->fetchAll();
+}
+
 function updateSQL($query) {
     $DB = $this->getDB();
     $table = $DB->prepare($query);
@@ -79,7 +86,7 @@ function innerJoion($query) {
     $table = $DB->prepare($query);
     $table->execute();
     
-    return $mytable = $table->fetchAll();;
+    return $mytable = $table->fetchAll();
 }
 
 

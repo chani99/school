@@ -17,13 +17,19 @@ private $DB;
         return $res;
 
     }
-
+    
 // checks if a id exists on a id row in a DB and returns true or false
  function Check_if_id_exists($table_name, $id) {
         $res =  $this->DB->CheckId("SELECT id FROM ".$table_name." WHERE id='$id'");
         $istrue = ($res > 0 ?  true : false);
         return $istrue;
     }
+
+    // 
+ function getLineById($table_name, $id) {
+    $res =  $this->DB->getLineById("SELECT * FROM ".$table_name." WHERE id='$id'");
+    return $res;
+}
 
 
  // updates data in a table 

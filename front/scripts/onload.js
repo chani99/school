@@ -10,12 +10,17 @@
 
 
      //  } else {
+        //  loads the main screen when loggin is ok
      let course_model = new CourseModuleController();
      let student_model = new StudentModelController();
      let user = { name: "chani", role: "owner", image: "chani.jpg" };
      createtemps(user, 'login');
      course_model.GetAllCourse('allcourses');
      student_model.GetAllStudents('allstudends');
+
+         
+    //  }
+
 
 
      //  }

@@ -22,7 +22,7 @@
         function Read($params) {
 
             if (array_key_exists("id", $params)) {
-                $Students = $c->getById($params);
+                $Students = $this->controller->getById($params);
                 return $Students;
             }
 

@@ -49,11 +49,19 @@
         
             return $CourseSelect; 
         }
-    
+        
+
+
+        function getById($id) {
+            if($this->model->getId() != 'null' || $this->model->getId() != 'NaN'){
+                $OneStudent =  $this->db->getLineById($this->table_name, $this->model->getId());
+                return  $OneStudent;
+            }
+        }
 
 
         // Selects all from Courses table and returns a object array
-        function getAllStudents() {
+        function getAllStudents(){
             $getall = $this->db->SelectAllFromTable($this->table_name, $this->classneame);
             $allStudents = array();            
             for($i=0; $i<count($getall); $i++) {

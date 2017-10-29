@@ -5,25 +5,15 @@
     
 
     $method = $_SERVER['REQUEST_METHOD']; 
-    // $method =  "PUT";
-    // $params = array(
-    //     "ctrl" => 'Course',
-    //     "id" => 4,
-    //     "name" => 'illusetrator',
-    //     "description" => 'illustrator is the culmination of the Graphic Ds into a single projectfor.',
-    //     "image" => 'ilustrator.jpg');
 
     if($method==  'PUT' || $method == 'DELETE') {
         parse_str(file_get_contents("php://input"),$post_vars);
         $params = $post_vars['activitiesArray']; 
     }
-
     else{
     $params = $_REQUEST['activitiesArray'];
-
     }
     
-
     switch ($params['ctrl']) {
         
             case 'Course':
@@ -45,6 +35,5 @@
             break;
 
     }
-
 
 ?>

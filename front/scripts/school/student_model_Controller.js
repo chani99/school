@@ -29,8 +29,10 @@
                 sendAJAX("GET", ApiUrl, data, 'getall', manu);
             },
 
-            getStudent: function(id, manu) {
+            getStudent: function(id) {
+                console.log(id);
                 data.id = id;
+                let manu = 'get_one';
                 sendAJAX("GET", ApiUrl, data, 'get_one', manu);
             }
 

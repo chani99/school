@@ -53,7 +53,7 @@ header.masthead > .overlay {
 }
 button {
   border: none;
-  background-color: #DFDFDF;
+  background-color: #c9c8c8;
 }
 .main-school {
   background-color: white;
@@ -74,7 +74,7 @@ button {
   flex: 1;
 }
 .gray {
-  background-color: #DFDFDF;
+  background-color: #c9c8c8;
 }
 .nopadding {
   margin: 0;

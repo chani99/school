@@ -29,6 +29,10 @@
                 sendAJAX("GET", ApiUrl, data, 'getall', manu);
             },
 
+            getStudent: function(id, manu) {
+                data.id = id;
+                sendAJAX("GET", ApiUrl, data, 'get_one', manu);
+            }
 
 
         }

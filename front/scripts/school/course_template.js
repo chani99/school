@@ -6,6 +6,7 @@
              $('#Students').html("");
              $('#Ssum').html(data.length);
 
+             // ajax for STUDENT list
              $.ajax('front/views/student_temp.html').always(function(courseTemplate) {
                  for (let i = 0; i < data.length; i++) {
                      var c = courseTemplate;
@@ -17,8 +18,18 @@
                      let d = document.createElement('div');
                      d.innerHTML = c;
                      $('#Students').append(d);
+
+                     let id = "#student" + i;
+
+                     $('body').on('click', id, function() {
+                         alert("hi" + i);
+                     });
+
                  }
+
              });
+
+
 
              break;
 
@@ -40,6 +51,9 @@
                      let d = document.createElement('div');
                      d.innerHTML = c;
                      $('#course').append(d);
+
+
+
                  }
              });
              break;

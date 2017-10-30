@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2017 at 07:21 AM
--- Server version: 10.1.22-MariaDB
--- PHP Version: 7.1.4
+-- Generation Time: Oct 30, 2017 at 02:27 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -66,11 +66,8 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`id`, `name`, `description`, `image`) VALUES
 (4, 'illusetrator', 'illustrator is the culmination of the Graphic Ds into a single projectfor.', 'ilustrator.jpg'),
 (5, 'Photoshop', 'This course is the culmination of the Graphic Ds into a single projectfor.', 'photoshop.jpg'),
-(6, 'Photoshop', 'This course is the culmination of the Graphic Ds into a single projectfor.', 'photoshop.jpg'),
-(7, 'Photoshop', 'This course is the culmination of the Graphic Ds into a single projectfor.', 'photoshop.jpg'),
-(8, 'Photoshop', 'This course is the culmination of the Graphic Ds into a single projectfor.', 'photoshop.jpg'),
-(9, 'Photoshop', 'This course is the culmination of the Graphic Ds into a single projectfor.', 'photoshop.jpg'),
-(10, 'Photoshop', 'This course is the culmination of the Graphic Ds into a single projectfor.', 'photoshop.jpg');
+(6, 'Javascript', 'Learn the same technologies that enable Netflix and Airbnb to create powerful interactive web apps in the 8-week Build Front-End Apps program.', 'javascript.jpg'),
+(7, 'HTML5', 'HTML5 is one of the hot web technologies and is widely gaining acceptance across mobile and web.', 'html5.png');
 
 -- --------------------------------------------------------
 

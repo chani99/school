@@ -60,5 +60,42 @@ function innerJoin($selected_tables, $table1, $table2, $Column_equal_to) {
     return $innerJion;
 
 }
+
+// inner join 3 tables
+function innerJoin3table($selected_rows, $table1, $table2, $table3, $Column_equal_to, $Column_equal_to2) {
+    $innerJion3 = $this->DB->innerJoion("SELECT ". $selected_rows." FROM ". $table1 ." INNER JOIN " .$table3." ON ". $Column_equal_to ." INNER JOIN " .$table2." ON ". $Column_equal_to2);
+    return $innerJion3;
+
 }
-    
+
+}
+
+    // SELECT course.name, course.image
+        // FROM course
+        // INNER JOIN student_course ON course.id = student_course.c_id
+        // INNER JOIN student ON student.id = student_course.s_id
+
+
+
+
+        
+
+        // Selects all from directors table and returns a object array
+        // function getCoursesInnerJoin() {
+        //     $innerJoinCourses = array();
+
+        // $selected_rows = "course.name, course.image";
+        // $table2 = 'student';
+        // $table3 = 'student_course';
+        // $Column_equal_to = 'course.id = student_course.c_id';
+        // $Column_equal_to2 = 'student_course.id = ' . $param["id"];
+        
+
+        //     $getall = $this->db->innerJoin3table($selected_rows, $this->table_name, $table2, $table3 $Column_equal_to, $Column_equal_to2), ;
+        //     for($i=0; $i<count($getall); $i++) {
+        //         $c = new CourseModel($getall[$i]);
+        //         array_push($innerJoinCourses, $this->model->jsonSerialize());
+        //     }
+        //     return $allMovies;   
+        // }
+        

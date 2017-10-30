@@ -29,6 +29,13 @@
                 sendAJAX("GET", CourseApiUrl, data, 'getall', manu);
             },
 
+            GetCourseForStudent: function(id) {
+                data.id = id;
+                data.inner = true;
+
+                sendAJAX("GET", CourseApiUrl, data, 'getinnerJoin', 'getinnerJoin');
+            },
+
 
 
         }

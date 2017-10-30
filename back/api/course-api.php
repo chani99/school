@@ -22,8 +22,15 @@
                 function Read($params) {
         
                     if (array_key_exists("id", $params)) {
-                        $result = $c->getById($params);
+                       if (array_key_exists("inner", $params)) {
+                            $result = $this->controller->getCoursesInnerJoin($params);
+                            return $result;
+                            
+                        }else{
+                            
+                        $result = $this->controller->getById($params);
                         return $result;
+                        }
                     }
         
                     else {

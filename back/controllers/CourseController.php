@@ -110,7 +110,24 @@
 
         
 
+        function getCoursesInnerJoin($param) {
+            $innerJoinCourses = array();
 
+            $selected_rows = "course.name, course.image";
+            $table2 = 'student';
+            $table3 = 'student_course';
+            $Column_equal_to = 'course.id = student_course.c_id';
+            $Column_equal_to2 = 'student_course.s_id = ' . $param["id"];
+            
+
+            $getall = $this->db->innerJoin3table($selected_rows, $this->table_name, $table2, $table3, $Column_equal_to, $Column_equal_to2);
+            for($i=0; $i<count($getall); $i++) {
+                $c = new CourseModel($getall[$i]);
+                array_push($innerJoinCourses, $this->model->jsonSerialize());
+            }
+            return $innerJoinCourses;   
+        }
+        
 
 
 }

@@ -15,6 +15,10 @@ function callback(response_text, calltype, manu) {
             createtemps(respnse, manu);
             break;
 
+        case 'getinnerJoin':
+            return (respnse);
+            break;
+
         case 'find_id':
             idtest(respnse);
             break;

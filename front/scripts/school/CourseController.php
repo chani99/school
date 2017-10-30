@@ -110,7 +110,6 @@
 
         
 
- 
         function getCoursesInnerJoin($param) {
             $innerJoinCourses = array();
 
@@ -131,6 +130,9 @@
         }
         
 
+
+}
+
 // SELECT course.name, course.image
 // FROM course
 // INNER JOIN student_course ON course.id = student_course.c_id
@@ -142,10 +144,3 @@
 // INNER JOIN student_course ON course.id = student_course.c_id
 // INNER JOIN student ON student.id = student_course.s_id
 // WHERE student.id = 5
-
-
-
-}
-
-
-

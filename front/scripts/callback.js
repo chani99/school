@@ -12,12 +12,11 @@ function callback(response_text, calltype, manu) {
 
         case 'getall':
         case 'get_one':
+        case 'getinnerJoin':
+
             createtemps(respnse, manu);
             break;
 
-        case 'getinnerJoin':
-            return (respnse);
-            break;
 
         case 'find_id':
             idtest(respnse);

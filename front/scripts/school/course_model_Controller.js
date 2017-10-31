@@ -33,7 +33,7 @@
                 data.id = id;
                 data.inner = true;
 
-                sendAJAX("GET", CourseApiUrl, data, 'getinnerJoin', 'getinnerJoin');
+                return sendAJAX("GET", CourseApiUrl, data, 'getinnerJoin', 'getinnerJoin');
             },
 
 

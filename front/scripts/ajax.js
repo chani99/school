@@ -6,7 +6,7 @@
             url: url,
             data: { activitiesArray: data },
             success: function(response_text) {
-                callback(response_text, calltype, manu);
+                (callback(response_text, calltype, manu));
             }
 
         });

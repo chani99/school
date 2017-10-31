@@ -48,6 +48,9 @@
                      c = c.replace("{{name}}", data[i].Course_name);
                      c = c.replace("{{descrip}}", data[i].Course_name);
                      c = c.replace("{{imgsrc}}", "back/images/" + data[i].Course_image);
+                     c = c.replace("{{course_name}}", data[i].Course_name);
+
+
 
                      let d = document.createElement('div');
                      d.innerHTML = c;
@@ -109,47 +112,130 @@
                  for (let i = 0; i < data.length; i++) {
                      var c = courseTemplate;
                      c = c.replace("{{name}}", data[i].Course_name);
+                     c = c.replace("{{course_name}}", data[i].Course_name);
                      c = c.replace("{{descrip}}", "");
                      c = c.replace("{{imgsrc}}", "back/images/" + data[i].Course_image);
                      let d = document.createElement('div');
                      d.innerHTML = c;
-                     $('#main-scool').append(d);
+                     $('#main-scool .courselist').append(d);
                  }
 
              });
              break;
-
-             // founction to load th main student update/new window
-             function UpdatestudentTemp(calltype, studen_id) {
-                 $('#main-scool').html("");
-                 $.ajax('front/views/new_update_student_temp.html').always(function(updateTemplate) {
-                     var c = updateTemplate;
-                     if (calltype == "edit") {
-                         c = c.replace("{{form_name}}", "UPDATE STUDENT");
-                     } else {
-                         c = c.replace("{{form_name}}", "NEW STUDENT");
-                     }
-                     c = c.replace("{{num}}", studen_id);
-                     let d = document.createElement('div');
-                     d.innerHTML = c;
-                     $('#main-scool').append(d);
-                 });
-
-             }
-
-
-
      }
 
 
 
+     // founction to load th main student update/new window
+     function UpdatestudentTemp(calltype, studen_id, data) {
+
+         var details = {
+             name: $("#student_name").html(),
+             phone: $("#student_phone").html(),
+             mail: $("#student_email").html(),
+         };
+
+         let student_courses = [];
+         $(".courselist span h6").each(function(i, sp) {
+             //  console.log(sp);
+             student_courses.push($(sp).attr("id"));
+         });
+         //  console.log(student_courses.join(", "));
+
+
+         var CoursesArray = [];
+         $(".allCourses span h6").each(function(i, sp) {
+             CoursesArray.push($(sp).attr("id"));
+         });
 
 
 
+         $.ajax('front/views/new_update_student_temp.html').always(function(updateTemplate) {
+             var c = updateTemplate;
+             if (calltype == "edit") {
+                 c = c.replace("{{form_name}}", "Update student: " + details.name);
+                 c = c.replace("{{new?}}", "update");
+
+             } else {
+                 c = c.replace("{{form_name}}", "NEW STUDENT");
+             }
+             c = c.replace("{{num}}", studen_id);
+             let d = document.createElement('div');
+             d.innerHTML = c;
+             $('#main-scool').html("");
+             $('#main-scool').append(d);
+
+             //  create cuorses checkbox list
 
 
+             for (var i = 0; i < CoursesArray.length; i++) {
+                 var checkbox = document.createElement('input');
+                 checkbox.type = "checkbox";
+                 checkbox.name = "courses";
+                 checkbox.value = CoursesArray[i];
+                 checkbox.id = i + 1;
+
+                 for (var x = 0; x < student_courses.length; x++) {
+                     if (CoursesArray[i] == student_courses[x]) {
+                         checkbox.checked = true;
+                     }
+                 }
+
+                 var label = document.createElement('label')
+                 label.htmlFor = i + 1;
+                 label.appendChild(document.createTextNode(CoursesArray[i] + " course"));
+                 let br = document.createElement("br");
+
+                 $('#course-checkbox').append(checkbox);
+                 $('#course-checkbox').append(label);
+                 $('#course-checkbox').append(br);
+
+             }
 
 
+             $("#inputphone").val(0 + details.phone);
+             $("#inputemail").val(details.mail);
+             $("#inputname").val(details.name);
+
+             //add event to student save
+             const num = 'saveStud' + studen_id; // elemnt id                 
+             $(document).on('click', '#' + num, function() {
+                 getFormValues("getform", $(this).attr("id"));
+             });
+
+         });
+     }
 
 
+     function getFormValues(calltype, id) {
+         let name;
+         let phone;
+         let image;
+         let file_name;
+         let email;
+         let courses;
+         let value = $('#' + id).val();
+         //  let student_model = new StudentModelController();
+
+         // gets values and sends them to the controller
+         switch (value) {
+             case 'update':
+                 name = $('#inputname').val();
+                 phone = $('#inputphone').val();
+                 email = $('#inputemail').val();
+                 image = $('#st_photo').prop('files')[0];
+                 courses = $('input[name="courses"]:checked').serialize();
+
+
+                 if (image != undefined) {
+                     file_name = image.name;
+                     let form_data = new FormData();
+                     form_data.append('file', image);
+                     sendFileToServer(form_data, 'upload');
+                 }
+
+                 student_model.updateStudent(name, phone, file_name, email, coursrs);
+                 break;
+         }
+     }
  }

@@ -1,8 +1,13 @@
 // "use static";
 
 // Gets results from ajax and sends it to the right method
-function callback(response_text, calltype, manu) {
-    var respnse = JSON.parse(response_text);
+function callback(response_text, calltype) {
+
+    let respnse = JSON.parse(response_text);
+    let column1;
+    let column2;
+    let column3;
+
 
     switch (calltype) {
 
@@ -11,12 +16,24 @@ function callback(response_text, calltype, manu) {
             break;
 
         case 'getall':
-        case 'get_one':
-        case 'getinnerJoin':
-
-            createtemps(respnse, manu);
+            column1 = new column1_director();
+            column1.allcourses(respnse);
             break;
 
+        case 'getallStudents':
+            column2 = new column2_director();
+            column2.allstudends(respnse);
+            break;
+
+        case 'get_one':
+            column3 = new column3_director();
+            column3.get_one_student(respnse);
+            break;
+
+        case 'getinnerJoin':
+            column3 = new column3_director();
+            column3.getinnerJoin(respnse);
+            break;
 
         case 'find_id':
             idtest(respnse);

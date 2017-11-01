@@ -25,8 +25,8 @@
 
 
 
-            GetAllStudents: function(manu) {
-                sendAJAX("GET", ApiUrl, data, 'getall', manu);
+            GetAllStudents: function() {
+                sendAJAX("GET", ApiUrl, data, 'getallStudents');
             },
 
             updatestudent: function(manu, data) {

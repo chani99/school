@@ -25,15 +25,15 @@
 
 
 
-            GetAllCourse: function(manu) {
-                sendAJAX("GET", CourseApiUrl, data, 'getall', manu);
+            GetAllCourse: function() {
+                sendAJAX("GET", CourseApiUrl, data, 'getall');
             },
 
             GetCourseForStudent: function(id) {
                 data.id = id;
                 data.inner = true;
 
-                return sendAJAX("GET", CourseApiUrl, data, 'getinnerJoin', 'getinnerJoin');
+                return sendAJAX("GET", CourseApiUrl, data, 'getinnerJoin');
             },
 
 

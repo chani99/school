@@ -3,8 +3,8 @@
   max-width: 600px;
   box-sizing: border-box;
   box-shadow: 5px 5px 2px #C5C3C3;
-  margin-top: 18px;
-  padding-bottom: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: white;
 }
 .centered {
@@ -29,8 +29,8 @@ h4 {
   max-width: 220px;
 }
 .photo {
-  margin: 15px;
-  max-width: 40px;
+  margin: 15px 15px 15px 15px;
+  height: 60px;
   float: left;
 }
 .medPhoto {

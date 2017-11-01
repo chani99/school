@@ -6,6 +6,9 @@ body {
     padding-top: 56px;
   }
 }
+.padding_top {
+  padding-top: "30px;";
+}
 #logo {
   max-width: 200px;
 }

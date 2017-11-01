@@ -1,20 +1,6 @@
 <section>
-    <div class="container gray">
-        <div class="row">
-
-
-            <div class="col-md-6 ">
-                <button class=" btn btn-primary" value="{{new?}}" id="saveStud{{num}}">Save</button>
-            </div>
-
-            <div class="col-md-6 ">
-                <button class=" btn btn-danger float-right" id="delete_student{{num}}">Delete</button>
-            </div>
-
-
-
-
-        </div>
+    <div class="container">
+        <button class=" btn btn-danger btn-xs" id="delete_student{{num}}">Delete</button>
     </div>
 
     <!-- <div class="container"> -->
@@ -27,18 +13,30 @@
             <input type="phone" id="inputphone" class="form-control" placeholder="Student Phone" required autofocus>
             <label for="inputemail" class="">e-mail</label>
             <input type="email" id="inputemail" class="form-control" placeholder="Student e-mail" required autofocus>
-            <label for="inputimage" class="">Image</label>
-            <form id="uploadForm" action="upload.php" method="post">
-                <label>Upload Image File:</label><br/>
-                <input name="userImage" type="file" id="st_photo" class="inputFile" />
-            </form>
+            <div class="padding_top">
 
-            <div id="course-checkbox">Cuorse List:<br> </div>
+                <label for="st_photo"><h5 class="padding_top">Upload Image File:</h5></label><br/>
+                <input name="userImage" type="file" id="st_photo" class="inputFile" />
+            </div>
+            <div class="padding_top">
+
+                <div id="course-checkbox">
+                    <h5>Cuorse List:<br></h5>
+                </div>
+            </div>
 
 
         </div>
 
         <!-- </div> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <button class=" btn btn-primary btn-lg float-right" value="{{new?}}" id="saveStud{{num}}">Save Student</button>
+                </div>
+            </div>
+        </div>
+
 
 
 
